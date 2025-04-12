@@ -13,3 +13,4 @@ C:\Users\esteb\OneDrive\Documentos\Cursos\DDD\CleanArchitectureProyect\src\Clean
 C:\Users\esteb\OneDrive\Documentos\Cursos\DDD\CleanArchitectureProyect\src\CleanArchitecture\CleanArchitecture.Application\obj\Debug\net8.0\refint\CleanArchitecture.Application.dll
 C:\Users\esteb\OneDrive\Documentos\Cursos\DDD\CleanArchitectureProyect\src\CleanArchitecture\CleanArchitecture.Application\obj\Debug\net8.0\CleanArchitecture.Application.pdb
 C:\Users\esteb\OneDrive\Documentos\Cursos\DDD\CleanArchitectureProyect\src\CleanArchitecture\CleanArchitecture.Application\obj\Debug\net8.0\ref\CleanArchitecture.Application.dll
+C:\Users\esteb\OneDrive\Documentos\Cursos\DDD\CleanArchitectureProyect\src\CleanArchitecture\CleanArchitecture.Application\obj\Debug\net8.0\CleanArchitecture.Application.sourcelink.json

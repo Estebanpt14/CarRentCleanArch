@@ -10,3 +10,4 @@ C:\Users\esteb\OneDrive\Documentos\Cursos\DDD\CleanArchitectureProyect\src\Clean
 C:\Users\esteb\OneDrive\Documentos\Cursos\DDD\CleanArchitectureProyect\src\CleanArchitecture\CleanArchitecture.Domain\obj\Debug\net8.0\CleanArchitecture.Domain.pdb
 C:\Users\esteb\OneDrive\Documentos\Cursos\DDD\CleanArchitectureProyect\src\CleanArchitecture\CleanArchitecture.Domain\obj\Debug\net8.0\ref\CleanArchitecture.Domain.dll
 C:\Users\esteb\OneDrive\Documentos\Cursos\DDD\CleanArchitectureProyect\src\CleanArchitecture\CleanArchitecture.Domain\obj\Debug\net8.0\CleanArchitecture.Domain.csproj.AssemblyReference.cache
+C:\Users\esteb\OneDrive\Documentos\Cursos\DDD\CleanArchitectureProyect\src\CleanArchitecture\CleanArchitecture.Domain\obj\Debug\net8.0\CleanArchitecture.Domain.sourcelink.json

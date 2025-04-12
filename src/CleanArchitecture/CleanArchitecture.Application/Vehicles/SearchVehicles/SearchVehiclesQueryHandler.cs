@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using CleanArchitecture.Application.Abstractions.Data;
 using CleanArchitecture.Application.Abstractions.Messaging;
+using CleanArchitecture.Domain.Rents;
+using Dapper;
 
 namespace CleanArchitecture.Application.Vehicles.SearchVehicles
 {
@@ -12,6 +14,13 @@ namespace CleanArchitecture.Application.Vehicles.SearchVehicles
         ISQLConnectionFactory sQLConnectionFactory
     ): IQueryHandler<SearchVehiclesQuery, IReadOnlyList<VehicleResponse>>
     {
+
+        private static readonly int[] ActiveRentStatuses = 
+        [
+            (int)RentStatus.Reserved,
+            (int)RentStatus.Confirmed,
+            (int)RentStatus.Completed
+        ];
 
         private readonly ISQLConnectionFactory _sqlConnectionFactory = sQLConnectionFactory; 
 
@@ -33,7 +42,10 @@ namespace CleanArchitecture.Application.Vehicles.SearchVehicles
                     v.vin AS Vin,
                     v.price AS Price,
                     v.type_coin AS TypeCoin,
-                    v.address AS Address
+                    v.address_country AS Country,
+                    v.address_state AS State,
+                    v.address_city AS City,
+                    v.address_street AS Street
                 FROM vehicles AS v
                 WHERE NOT EXISTS
                 (
@@ -45,6 +57,24 @@ namespace CleanArchitecture.Application.Vehicles.SearchVehicles
                         r.status = ANY (@ActiveRentStatuses)
                 )
             """;
+
+            var vehicles = await connection.QueryAsync<VehicleResponse, AddressResponse, VehicleResponse>
+            (
+                sql,
+                (vehicle, address) => {
+                    vehicle.Address = address;
+                    return vehicle;
+                },
+                new 
+                {
+                    StartDate = request.Begin,
+                    EndDate = request.End,
+                    ActiveRentStatuses
+                },
+                splitOn: "Country"
+            );
+
+            return vehicles.ToList();
         }
     }
 }

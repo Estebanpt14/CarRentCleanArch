@@ -17,7 +17,7 @@ namespace CleanArchitecture.Application.Vehicles.SearchVehicles
 
         public string? TypeCoin { get; init; }
 
-        public AddressResponse? Address { get; init; }
+        public AddressResponse? Address { get; set; }
 
     }
 }
